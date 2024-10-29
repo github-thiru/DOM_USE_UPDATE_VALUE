@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+   
+</head>
+<body>
+    <style>
+        body {
+             font-family: Arial, sans-serif; margin: 20px; 
+            }
+        .section { 
+            margin-bottom: 15px;
+         }
+        label { 
+            font-weight: bold; width: 100px; display: inline-block;
+         }
+        button {
+             margin-left: 10px;
+             }
+
+
+</style>
+    <h1><u>Resume</u></h1>
+    <div class="section"><label>Name</label><span id="name">Thiru</span></div>
+    <div class="section"><label>email</label><span id="email">Thiru@gmail</span></div>
+    <div class="section"><label>phone</label><span id="phone">630019----</span></div>
+    <div class="section"><label>skills</label><span id="skills">HTML,CSS,JS </span></div>
+
+
+        <!-- update -->
+    <div class="section">
+        <input type="text" id="updateInput" placeholder="Enter new value">
+        <select id="fieldselect">
+            <option value="name">Name</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="skills">Skills</option>
+        </select>
+        <button onclick="updateField()">update</button>
+    </div>
+
+
+    <script>
+        function updateField(){
+            const newvalue=document.getElementById('updateInput').value;
+            const field=document.getElementById('fieldselect').value;
+
+            if(newvalue){
+                document.getElementById(field).innerText=newvalue;
+                document.getElementById('updateInput').value="";
+                console.log(`${field} update to: ${newvalue}`);
+            }else{
+                console.log('please enter a new value');
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 
